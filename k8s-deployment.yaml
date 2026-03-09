@@ -3,7 +3,7 @@
 # BEFORE DEPLOYING, replace these placeholders:
 #   - 655700896650  : Your AWS Account ID (e.g., 123456789012)
 #   - ap-south-1      : Your AWS Region (e.g., ap-south-1)
-#
+#   - Update with your email at notification service (line no: 399 & 401)
 # Quick replace command:
 #   sed -i 's/655700896650/YOUR_ACCOUNT_ID/g; s/ap-south-1/YOUR_REGION/g' k8s-deployment.yaml
 
@@ -396,9 +396,9 @@ spec:
         - name: EMAIL_PROVIDER
           value: "ses"
         - name: SES_FROM_EMAIL
-          value: "avizway@gmail.com"
+          value: "077avinashreddy@gmail.com"
         - name: TASK_OWNER_EMAIL
-          value: "avizway@gmail.com"
+          value: "avinashaws082025@gmail.com"
         - name: AWS_REGION
           value: "ap-south-1"
         resources:

@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::655700896650:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/7D2168BDE75D98FAB526B181B922A48D"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.ap-south-1.amazonaws.com/id/7D2168BDE75D98FAB526B181B922A48D:aud": "sts.amazonaws.com",
+          "oidc.eks.ap-south-1.amazonaws.com/id/7D2168BDE75D98FAB526B181B922A48D:sub": "system:serviceaccount:task-management:notification-service-sa"
+        }
+      }
+    }
+  ]
+}

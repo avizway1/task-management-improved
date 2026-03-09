@@ -21,6 +21,5 @@ USER nodejs
 
 EXPOSE 3003
 
-# Health check removed - healthcheck.js not found
 
 CMD ["node", "server.js"]
