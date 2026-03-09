@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: task-management
+  namespace: argocd
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/YOUR_REPO.git  # Update with your Git repo URL
+    targetRevision: main  # or master, depending on your default branch
+    path: k8s
+  
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: task-management
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
