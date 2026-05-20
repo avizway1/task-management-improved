@@ -5,7 +5,7 @@ metadata:
   name: notification-service-sa
   namespace: task-management
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::982424467695:role/TaskManagementSESRole
+    eks.amazonaws.com/role-arn: arn:aws:iam::655700896650:role/TaskManagementSESRole
 
 ---
 apiVersion: apps/v1
@@ -30,7 +30,7 @@ spec:
         command: ['sh', '-c', 'until nc -z redis-service 6379; do echo "Waiting for Redis..."; sleep 2; done; echo "Redis is ready!"']
       containers:
       - name: notification-service
-        image: 982424467695.dkr.ecr.ap-south-1.amazonaws.com/task-management/notification-service:latest
+        image: 655700896650.dkr.ecr.ap-south-1.amazonaws.com/task-management/notification-service:latest
         ports:
         - containerPort: 3003
         env:
